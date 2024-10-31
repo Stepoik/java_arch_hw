@@ -1,0 +1,24 @@
+type Auto {
+    id: ID!
+    title: String!
+    brand: String!
+    price: Float!
+    age: Int!
+}
+
+type Query {
+    automobiles: [Auto!]!
+    automobile(id: ID!): Auto
+}
+
+type Mutation {
+    addAutomobile(auto: AutoInput!): Auto
+    deleteById(id: ID!): Auto
+}
+
+input AutoInput {
+    title: String!
+    brand: String!
+    price: Float!
+    age: Int!
+}
